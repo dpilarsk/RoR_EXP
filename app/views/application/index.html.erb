@@ -1,0 +1,18 @@
+<div class="container">
+  <hr>
+  <% if notice %>
+      <div class="alert alert-success"><%= notice %></div>
+  <% elsif flash[:error] %>
+      <div class="alert alert-danger"><%= flash[:error] %></div>
+  <% end %>
+  <div class="pmd-card pmd-card-default pmd-z-depth pmd-card-custom-form">
+    <div class="pmd-card-title" style="text-align: center;">
+      <h2 class="pmd-card-title-text">Accueil</h2>
+      <span>
+        <%= link_to user_marvin_omniauth_authorize_path do %>
+        <button class="btn pmd-btn-raised btn-primary btn-block pmd-ripple-effect"><i class="material-icons">power_settings_new</i> Se connecter via 42</button>
+        <% end %>
+      </span>
+    </div>
+  </div>
+</div>

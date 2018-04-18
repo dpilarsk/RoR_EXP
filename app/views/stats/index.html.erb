@@ -1,0 +1,85 @@
+<div class="container">
+  <!--Title, Media, and Action area -->
+  <hr>
+  <div class="row">
+    <h1>Admissions</h1>
+    <div class="col-md-4">
+
+      <div class="pmd-card pmd-card-media-inline pmd-z-depth">
+        <!-- Card media -->
+        <div class="pmd-card-media">
+          <!-- Card media heading -->
+          <div class="media-body">
+            <p id="notice"><%= notice %></p>
+            <h2 class="pmd-card-title-text">Piscine aout 2016</h2>
+            <span class="pmd-card-subtitle-text"><%= pie_chart Person.where(pool_year: 2016, pool_month: 'august').group(:is_admitted).count, library: {tooltip: {pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'}, plotOptions: {pie: {allowPointSelect: true, cursor: 'pointer', dataLabels: {enabled: false}, showInLegend: true}}}, adapter: "highcharts" %><br>
+        </span>
+          </div>
+        </div>
+
+        <!-- Card action -->
+        <div class="pmd-card-actions">
+          <%= link_to 'Back', :back, :class => 'btn pmd-btn-flat pmd-ripple-effect btn-primary' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="pmd-card pmd-card-media-inline pmd-z-depth">
+        <!-- Card media -->
+        <div class="pmd-card-media">
+          <!-- Card media heading -->
+          <div class="media-body">
+            <p id="notice"><%= notice %></p>
+            <h2 class="pmd-card-title-text">Piscine juillet 2017</h2>
+            <span class="pmd-card-subtitle-text"><%= pie_chart Person.where(pool_year: 2017, pool_month: 'july').group(:is_admitted).count, library: {tooltip: {pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'}, plotOptions: {pie: {allowPointSelect: true, cursor: 'pointer', dataLabels: {enabled: false}, showInLegend: true}}}, adapter: "highcharts" %><br>
+        </span>
+          </div>
+        </div>
+
+        <!-- Card action -->
+        <div class="pmd-card-actions">
+          <%= link_to 'Back', :back, :class => 'btn pmd-btn-flat pmd-ripple-effect btn-primary' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="pmd-card pmd-card-media-inline pmd-z-depth">
+        <!-- Card media -->
+        <div class="pmd-card-media">
+          <!-- Card media heading -->
+          <div class="media-body">
+            <p id="notice"><%= notice %></p>
+            <h2 class="pmd-card-title-text">Piscine aout 2017</h2>
+            <span class="pmd-card-subtitle-text"><%= pie_chart Person.where(pool_year: 2017, pool_month: 'august').group(:is_admitted).count, library: {tooltip: {pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'}, plotOptions: {pie: {allowPointSelect: true, cursor: 'pointer', dataLabels: {enabled: false}, showInLegend: true}}}, adapter: "highcharts" %><br>
+        </span>
+          </div>
+        </div>
+
+        <!-- Card action -->
+        <div class="pmd-card-actions">
+          <%= link_to 'Back', :back, :class => 'btn pmd-btn-flat pmd-ripple-effect btn-primary' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="pmd-card pmd-card-media-inline pmd-z-depth">
+        <!-- Card media -->
+        <div class="pmd-card-media">
+          <!-- Card media heading -->
+          <div class="media-body">
+            <p id="notice"><%= notice %></p>
+            <h2 class="pmd-card-title-text">Piscine aout 2017</h2>
+            <span class="pmd-card-subtitle-text"><%= pie_chart Person.where(pool_year: 2017, pool_month: 'september').group(:is_admitted).count, library: {legend: {position: 'bottom'}} %><br>
+        </span>
+          </div>
+        </div>
+
+        <!-- Card action -->
+        <div class="pmd-card-actions">
+          <%= link_to 'Back', :back, :class => 'btn pmd-btn-flat pmd-ripple-effect btn-primary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

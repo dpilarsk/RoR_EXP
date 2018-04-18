@@ -1,0 +1,30 @@
+<div class="container">
+  <!--Title, Media, and Action area -->
+  <div class="pmd-card pmd-card-media-inline pmd-z-depth">
+    <!-- Card media -->
+    <div class="pmd-card-media">
+      <!-- Card media heading -->
+      <div class="media-body">
+        <p id="notice"><%= notice %></p>
+        <h2 class="pmd-card-title-text"><%= @person.first_name + " " + @person.last_name %></h2>
+        <span class="pmd-card-subtitle-text">Level: <%= @person.level %><br>
+          <%= render partial: "admission_display" %>
+          <%= render partial: "projects_display" %>
+        </span>
+      </div>
+      <!-- Card media image -->
+      <div class="media-right media-middle">
+        <a href="javascript:void(0);">
+          <a target="_blank" href="https://profile.intra.42.fr/users/<%= @person.login %>"><img src="<%= @person.image_url %>" alt="" width="250px"></a>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card action -->
+    <div class="pmd-card-actions">
+      <%= link_to 'Back', :back, :class => 'btn pmd-btn-flat pmd-ripple-effect btn-primary' %>
+      <%= link_to 'Update projects', update_projects_path(@person.login), :class => 'btn pmd-btn-flat pmd-ripple-effect btn-warning' %>
+      <%= link_to 'Update user', update_user_path(@person.login), :class => 'btn pmd-btn-flat pmd-ripple-effect btn-info' %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<!-- Accordion with No Space example -->
+<div class="panel-group pmd-accordion pmd-accordion-nospace" id="accordion7" role="tablist" aria-multiselectable="true" >
+  <% @person.project.each do |project| %>
+      <% next if project.slug.include? "piscine-c-day-09-" %>
+      <% next if project.cursus_id != 6 %>
+      <% if project.is_validated %>
+        <div class="panel panel-success">
+      <% else %>
+          <div class="panel panel-danger">
+      <% end %>
+        <div class="panel-heading" role="tab" id="headingOne<%= project.id %>">
+          <h4 class="panel-title"><a data-toggle="collapse"  data-parent="#accordion7" href="#collapseOne5<%= project.id %>" aria-expanded="true" aria-controls="collapseOne5<%= project.id %>" data-expandable="false"><%= project.name %><i class="material-icons md-dark pmd-sm pmd-accordion-arrow">keyboard_arrow_down</i></a></h4>
+        </div>
+        <div id="collapseOne5<%= project.id %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne<%= project.id %>">
+          <div class="panel-body">
+            <b>Note: <%= project.final_mark %></b><br>
+            <b>Essais: <%= project.retries %></b>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+<!-- Accordion with No Space example end -->

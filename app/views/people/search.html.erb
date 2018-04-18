@@ -1,0 +1,39 @@
+<h1>Users</h1>
+<div class="container">
+  <div class="form-group pmd-textfield pmd-textfield-floating-label">
+  </div>
+  <%= paginate @people %>
+  <div class="pmd-card">
+    <div class="table-responsive">
+      <table class="table pmd-table">
+        <thead>
+        <tr>
+          <th>Image</th>
+          <th><%= sortable "login" %></th>
+          <th><%= sortable "pool_year", "Année" %></th>
+          <th><%= sortable "pool_mois", "Mois" %></th>
+          <th><%= sortable "level" %></th>
+          <th>Admis(e)?</th>
+          <th>Links</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @people.each do |user| %>
+            <tr>
+              <td><%= image_tag(user.image_url, :width => "150") %></td>
+              <td><%= user.login %></td>
+              <td><%= user.pool_year %></td>
+              <td><%= user.pool_month %></td>
+              <td><%= user.level %></td>
+              <td><%= user.is_admitted %></td>
+              <div class="btn-group">
+                <td><%= link_to 'Show', user_path(user.login), :class => 'btn pmd-ripple-effect btn-info' %></td>
+              </div>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <%= paginate @people %>
+</div>
